@@ -1,0 +1,28 @@
+#product-contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(86, 136, 186);
+}
+
+div.item img{
+    max-width: 33vw;
+    max-height: 33vh;
+    border-radius: 5px;
+    box-shadow: 5px 5px rgb(225, 141, 14);
+}
+
+div.item {
+    flex-wrap: wrap;
+    background-color: rgb(254, 178, 3);
+    max-width: 35vw;
+    max-height: 50vh;
+    border-radius: 8px;
+    padding: 15px 32px;
+}
