@@ -32,6 +32,18 @@ app.get('/get_specific_product/:product_id', async (req,res) => {
     res.json(response)
 })
 
+app.post("/create_product", async (req, res) => {
+    let returnedVal = await TheInventory.create({
+        name: req.body.nameString,
+        desc: req.body.descString,
+        price: req.body.priceNum,
+        inventory: req.body.invNum,
+        imgLink: req.body.linkString
+    })
+    console.log(returnedVal)
+    res.send(returnedVal)
+})
+
 
 app.listen(port, () => {
     console.log(`Server is Listening on `+ port);

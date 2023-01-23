@@ -35,3 +35,8 @@ const getData = async () => {
     })});
 }
 getData()
+
+let addButton = document.getElementById('all-products')
+addButton.addEventListener('click', () => {
+    window.location.href = "../"
+})

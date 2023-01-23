@@ -19,10 +19,8 @@ const getData = async () => {
         containerDiv.appendChild(containerElement)
         //to let each item be clickable to its own display page
             let productsArray = document.querySelectorAll('.item')
-            console.log(productsArray)
             productsArray.forEach(el => {
             el.addEventListener('click', () => {
-            console.log(el.id)
             window.location.href = `./show_product?id=${el.id}`
         })
         })

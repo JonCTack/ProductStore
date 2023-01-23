@@ -1,7 +1,8 @@
 #product-contain {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
 }
@@ -9,6 +10,7 @@
 body {
     text-align: center;
     background-color: rgb(86, 136, 186);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
 
 div.item img{
