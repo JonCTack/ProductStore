@@ -14,7 +14,7 @@ const getData = async () => {
         imgTag.src = object.imgLink
         containerElement.appendChild(imgTag)
         let h2Tag = document.createElement('h2');
-        h2Tag.textContent = `PRICE: $${object.price}`;
+        h2Tag.textContent = `PRICE: $${object.price.toFixed(2)}`;
         containerElement.appendChild(h2Tag);
         containerDiv.appendChild(containerElement)
         //to let each item be clickable to its own display page

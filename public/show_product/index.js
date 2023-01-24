@@ -1,3 +1,4 @@
+
 let containerDiv = document.getElementById('product-contain')
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
@@ -19,7 +20,7 @@ const getData = async () => {
         pTag.textContent = `${object.desc}`;
         containerElement.appendChild(pTag);
         let h2Tag = document.createElement('h2');
-        h2Tag.textContent = `PRICE: $${object.price}`;
+        h2Tag.textContent = `PRICE: $${object.price.toFixed(2)}`;
         containerElement.appendChild(h2Tag);
         let h3Tag = document.createElement('h3');
         h3Tag.textContent = `${object.inventory} Remaining`;
@@ -36,8 +37,7 @@ const getData = async () => {
                 headers: { 'Content-Type': 'application/json' },
             })
             done.json().then( (parsed) => {
-                let inventoryElement = document.getElementById('inventory')
-                inventoryElement.innerText = `${parsed.inventory - 1} Remaining`
+                window.location.href = `../show_product?id=${params.id}`
         })
         })
         containerElement.appendChild(buyButton)
@@ -64,7 +64,29 @@ delButton.addEventListener('click', async () => {
       }) 
 }})
 
+
+let editPanel = document.getElementById('edit-panel')
 let editButton = document.getElementById('edit')
 editButton.addEventListener('click', () => {
-    console.log('changed')
+    editPanel.className=""
+})
+
+let editCommit = document.getElementById('edit-item')
+editCommit.addEventListener('click', async () => {
+    let nameString = document.getElementById('name-i').value;
+    let descString = document.getElementById('desc-i').value;
+    let priceNum = +document.getElementById('price-i').value;
+    let invNum = +document.getElementById('inv-i').value;
+    let linkString = document.getElementById('imgLink-i').value;
+    let editArray = [nameString, descString, priceNum, invNum, linkString];
+    let keyArray = ["name", "desc", "price", "inventory", "imgLink"]
+    editArray.forEach( async (el, i) => {
+        if (el != undefined && el != 0){
+            let done = await fetch(`/update_product/${params.id}/${keyArray[i]}/${el}`, {
+                method: `PUT`,
+                headers: { 'Content-Type': 'application/json' },
+            })
+        }
+    })
+    window.location.href = `../show_product?id=${params.id}`
 })

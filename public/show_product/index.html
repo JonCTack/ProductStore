@@ -9,16 +9,45 @@
     <script src="index.js" defer></script>
 </head>
 <body>
+    <h1 id="title">THE EVERYTHING STORE</h1>
     <nav> 
         <h1 id="all-products">all products</h1>
         
     </nav>
-    <div id="product-contain">
+<div id="product-contain">
+<!-- item goes here -->
 
+    <br>
+    <div id="edit-panel" class="hidden">
+        <p>fill out the forms which you want edited</p>
+        <div class="inputcontain">
+            <label for="name-i"> Name </label>
+            <input type="text" id="name-i">
+        </div>
+        <div class="inputcontain">
+            <label for="color-i"> Description </label>
+            <input type="text" id="desc-i">
+        </div>
+        <div class="inputcontain">
+            <label for="age-i"> Price </label>
+            <input type="number" id="price-i">
+        </div>
+        <div class="inputcontain">
+            <label for="age-i"> Inventory </label>
+            <input type="number" id="inv-i">
+        </div>
+        <div class="inputcontain">
+            <label for="color-i"> Link to Image </label>
+            <input type="text" id="imgLink-i">
+        </div>
+        <br>
+        <button id="edit-item">commit edits</button>
     </div>
+</div>
     <nav id="options">
         <h4 id="delete">delete product</h4>
         <h4 id="edit">edit product</h4>
     </nav>
+
 </body>
 </html>
