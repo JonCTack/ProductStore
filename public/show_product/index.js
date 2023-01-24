@@ -2,11 +2,12 @@
 let containerDiv = document.getElementById('product-contain')
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
-console.log(params)
 const getData = async () => {
     let data = await fetch(`/get_specific_product/${params.id}`);
     data.json().then((parsed) => {
     parsed.forEach((object) => {
+        let pageTitle = document.getElementById('title')
+        pageTitle.innerText = `EVERYTHING STORE | ${object.name.toUpperCase()}`;
         let containerElement = document.createElement('div');
         containerElement.id = object._id
         containerElement.className = "item"
