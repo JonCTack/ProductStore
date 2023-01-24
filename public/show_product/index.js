@@ -23,12 +23,24 @@ const getData = async () => {
         containerElement.appendChild(h2Tag);
         let h3Tag = document.createElement('h3');
         h3Tag.textContent = `${object.inventory} Remaining`;
+        h3Tag.id = "inventory"
         containerElement.appendChild(h3Tag)
         let buyButton = document.createElement('button')
         buyButton.textContent = `BUY NOW`
         if (object.inventory <= 0){
             buyButton.className = 'disabled'
         }
+        buyButton.addEventListener('click', async () => {
+            let done = await fetch(`/update_product/${params.id}/inventory/${object.inventory - 1}`, {
+                method: `PUT`,
+                headers: { 'Content-Type': 'application/json' },
+            })
+            done.json().then( (parsed) => {
+                console.log(parsed.inventory)
+                let inventoryElement = document.getElementById('inventory')
+                inventoryElement.innerText = `${parsed.inventory - 1} Remaining`
+        })
+        })
         containerElement.appendChild(buyButton)
         containerDiv.appendChild(containerElement)
 

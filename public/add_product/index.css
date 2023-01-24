@@ -52,3 +52,12 @@ button.disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+  nav h1 {
+    cursor: pointer;
+    display: inline-block;
+}
+
+nav h1:hover {
+    color:rgb(53, 53, 53)
+}

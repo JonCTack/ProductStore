@@ -24,10 +24,7 @@ sendItemButton.addEventListener('click', async () =>{
     let uploadStatusTag = document.getElementById('upload-status');
     console.log(response.status);
     if (response.status === 200) {
-        console.log(response);
-        console.log("upload complete!!!");
-        uploadStatusTag.textContent = "Upload Completed";
-        uploadStatusTag.style.color = "green";
+        window.location.href = "../"
     } else {
         console.log(response);
         console.log("upload failed");

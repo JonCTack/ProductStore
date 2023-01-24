@@ -44,6 +44,17 @@ app.post("/create_product", async (req, res) => {
     res.send(returnedVal)
 })
 
+app.put('/update_product/:product_id/:product_key/:product_value', async (req,res) => {
+    let id = req.params.product_id
+    let key = req.params.product_key
+    let value = req.params.product_value
+    let updateObject = {
+        [key] : value
+    }
+    let updateResponse = await TheInventory.findByIdAndUpdate(id, updateObject )
+    res.json(updateResponse)
+})
+
 
 app.listen(port, () => {
     console.log(`Server is Listening on `+ port);
