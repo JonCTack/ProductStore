@@ -32,6 +32,7 @@ const getData = async () => {
             buyButton.className = 'disabled'
         }
         buyButton.addEventListener('click', async () => {
+            if (object.inventory > 0){
             let done = await fetch(`/update_product/${params.id}/inventory/${object.inventory - 1}`, {
                 method: `PUT`,
                 headers: { 'Content-Type': 'application/json' },
@@ -39,7 +40,7 @@ const getData = async () => {
             done.json().then( (parsed) => {
                 window.location.href = `../show_product?id=${params.id}`
         })
-        })
+        }})
         containerElement.appendChild(buyButton)
         containerDiv.appendChild(containerElement)
 
@@ -67,8 +68,15 @@ delButton.addEventListener('click', async () => {
 
 let editPanel = document.getElementById('edit-panel')
 let editButton = document.getElementById('edit')
+let togglePanel = false
 editButton.addEventListener('click', () => {
-    editPanel.className=""
+    if (togglePanel == false){
+    editPanel.className="";
+    togglePanel = true;
+    } else {
+    editPanel.className="hidden";
+    togglePanel = false;
+    }
 })
 
 let editCommit = document.getElementById('edit-item')
