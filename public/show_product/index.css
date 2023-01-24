@@ -59,7 +59,9 @@ button.disabled {
     cursor: not-allowed;
   }
 
-  nav h1 {
+
+
+nav h1 {
     cursor: pointer;
     display: inline-block;
 }
@@ -67,3 +69,18 @@ button.disabled {
 nav h1:hover {
     color:rgb(53, 53, 53)
 }
+
+nav h4 {
+    cursor: pointer;
+    display: inline-block;
+    margin: 1vh;
+}
+
+nav h4:hover {
+    color:rgb(53, 53, 53)
+}
+
+nav h4#delete:hover {
+    color:rgb(128, 36, 36)
+}
+

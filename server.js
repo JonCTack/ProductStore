@@ -41,7 +41,7 @@ app.post("/create_product", async (req, res) => {
         imgLink: req.body.linkString
     })
     console.log(returnedVal)
-    res.send(returnedVal)
+    res.json(returnedVal)
 })
 
 app.put('/update_product/:product_id/:product_key/:product_value', async (req,res) => {
@@ -53,6 +53,11 @@ app.put('/update_product/:product_id/:product_key/:product_value', async (req,re
     }
     let updateResponse = await TheInventory.findByIdAndUpdate(id, updateObject )
     res.json(updateResponse)
+})
+
+app.delete('/delete_product/:product_id', async (req,res) => {
+    let deleteResponse = await TheInventory.findByIdAndDelete(req.params.product_id)
+    res.json(deleteResponse)
 })
 
 

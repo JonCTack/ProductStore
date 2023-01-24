@@ -34,7 +34,10 @@ sendItemButton.addEventListener('click', async () =>{
     }}
 })
 
-let addButton = document.getElementById('all-products')
-addButton.addEventListener('click', () => {
+let homeButton = document.getElementById('all-products')
+
+homeButton.addEventListener('click', () => {
     window.location.href = "../"
 })
+
+

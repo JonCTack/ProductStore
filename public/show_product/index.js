@@ -36,7 +36,6 @@ const getData = async () => {
                 headers: { 'Content-Type': 'application/json' },
             })
             done.json().then( (parsed) => {
-                console.log(parsed.inventory)
                 let inventoryElement = document.getElementById('inventory')
                 inventoryElement.innerText = `${parsed.inventory - 1} Remaining`
         })
@@ -51,4 +50,21 @@ getData()
 let addButton = document.getElementById('all-products')
 addButton.addEventListener('click', () => {
     window.location.href = "../"
+})
+
+let delButton = document.getElementById('delete')
+delButton.addEventListener('click', async () => {
+    if (confirm(`you are sure you want to delete this item?`) == true) {
+        let done = await fetch(`/delete_product/${params.id}`, {
+            method: `DELETE`,
+            headers: { 'Content-Type': 'application/json' },
+        })
+        done.json().then( () => {
+            window.location.href = "../"
+      }) 
+}})
+
+let editButton = document.getElementById('edit')
+editButton.addEventListener('click', () => {
+    console.log('changed')
 })
