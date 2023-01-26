@@ -20,6 +20,7 @@ h1#title{
     background-color: rgb(0, 186, 186);
     border-radius: 16px;
     box-shadow: 5px 5px rgb(76, 119, 162);
+    min-width: max-content;
 }
 
 
@@ -32,6 +33,7 @@ div#container {
     border-radius: 8px;
     padding: 15px 32px;
     box-shadow: 5px 5px rgb(57, 91, 125);
+    min-width: max-content;
 }
 
 button {
@@ -71,9 +73,10 @@ nav h1 {
     border-radius: 16px;
     width: 15vw;
     box-shadow: 5px 5px rgb(76, 119, 162);
+    min-width: max-content;
 }
 
 nav h1:hover {
-    color:rgb(53, 53, 53)
+    background-color: rgb(2, 226, 226);
 }
 
