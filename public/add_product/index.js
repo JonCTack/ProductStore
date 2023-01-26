@@ -13,6 +13,7 @@ sendItemButton.addEventListener('click', async () =>{
         invNum,
         linkString
     }
+    //this if statement prevents the possibility of incomplete or incorrect forms crashing the server
     if (nameString && descString && priceNum && invNum && linkString){
     let response = await fetch('/create_product',{
         method: 'POST',

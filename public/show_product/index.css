@@ -6,14 +6,20 @@
     max-height: 100vh;
 }
 
-body {
+html {
     text-align: center;
-    background-color: rgb(81, 124, 167);
+    background: linear-gradient(0deg, rgba(66,105,144,1) 0%, rgba(77,156,172,1) 100%) no-repeat center center fixed;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1#title{
     background-color: rgb(0, 186, 186);
+    border-radius: 16px;
+    box-shadow: 5px 5px rgb(76, 119, 162);
 }
 
 
@@ -69,10 +75,15 @@ button.disabled {
 nav h1 {
     cursor: pointer;
     display: inline-block;
+    background-color: rgb(0, 186, 186);
+    border-radius: 16px;
+    width: 15vw;
+    box-shadow: 5px 5px rgb(76, 119, 162);
 }
 
 nav h1:hover {
     color:rgb(53, 53, 53)
+    
 }
 
 nav h4 {

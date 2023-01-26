@@ -44,11 +44,13 @@ app.post("/create_product", async (req, res) => {
     res.json(returnedVal)
 })
 
+//I thought it'd be nice to have one path for updating products, so it has to be extremely flexible
 app.put('/update_product/:product_id/:product_key/:product_value', async (req,res) => {
     let id = req.params.product_id
     let key = req.params.product_key
     let value = req.params.product_value
     let updateObject = {
+     //this is the only way I've found to have the key value of an object be a variable    
         [key] : value
     }
     let updateResponse = await TheInventory.findByIdAndUpdate(id, updateObject )
