@@ -55,13 +55,13 @@ editCommit.addEventListener('click', async () => {
     let keyArray = ["name", "desc", "price", "inventory", "imgLink"]
     editArray.forEach( async (el, i) => {
         if (el != undefined){
-            let done = await fetch(`/update_product/${params.id}/${keyArray[i]}/${el}`, {
-                method: `PUT`,
+            let done = await fetch('/update_product/${params.id}/${keyArray[i]}/${el}', {
+                method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
             })
         }
     })
-    window.location.href = `../show_product?id=${params.id}`
+    window.location.href = '../show_product?id=${params.id}'
 })`
-
+* code edited for markdown formatting *
 Once again this is mentioned in comments in the code but this deserves some explanation. Part of having the website have minimal aesthetics includes a toggleable edit panel and the option to either edit one, many, or all properties of a product. This option requires iterating through the input array along with an array for the matching keys to send to the code shown earlier.
