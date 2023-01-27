@@ -63,5 +63,7 @@ editCommit.addEventListener('click', async () => {
     })
     window.location.href = '../show_product?id=${params.id}'
 })`
+<br />
+
 *code edited for markdown formatting*
 Once again this is mentioned in comments in the code but this deserves some explanation. Part of having the website have minimal aesthetics includes a toggleable edit panel and the option to either edit one, many, or all properties of a product. This option requires iterating through the input array along with an array for the matching keys to send to the code shown earlier.
