@@ -1,15 +1,16 @@
 # THE EVERYTHING STORE
 This project referred to as THE EVERYTHING STORE is a simple fullstack application that is emulating a store front.
 <br />
-Video here
+Video of an overview of this application:
+https://youtu.be/7o6_d4gUKUA
 
 ## The Stack
 MERN (MongoDB, Express, React, Node.js)[^1]
-- MongoDB
+- MongoDB:
 This is a popular document database and one that can be interacted with quite easily through the mongoose Node.js module.
-- Express
+- Express:
 This is a Node.js module that allows routing of incoming http requests.
-- Node
+- Node:
 This is a javascript(JS) runtime environment that the whole project is based on.
 [^1]: React was not used in this particular project.
 ## Priorities
